@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+
+\title{Automatique TP1}
+\author{Alexis Brossier - 12205984}
+\date{Mars 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Analyse du modèle entrée-sortie du système}
+\section{Commande Proportionnelle}
+\subsection{}
+\begin{align}
+    H_0(s)&=C_p(s)H(s)=\frac{N_0(s)}{D_0(s)}=\frac{K_Cb}{s(s+a)}\\
+    H_f(s)&=\frac{N_f(s)}{D_f(s)}=\frac{K_Cb}{K_Cb+s(s+a)}\\
+    H_e(s)&=\frac{N_0(s)}{D_f(s)}=\frac{s(s+a)}{K_Cb+s(s+a)}
+\end{align}
+\subsection{}
+L'erreur dynamique $e_1$ nous est donné par:
+\begin{equation}
+    e_1=\lim_{s\leftarrow0}H_e(s)\frac{1}{s}=\lim_{s\leftarrow0}\frac{s(s+a)}{K_Cb+s(s+a)}=\lim_{s\leftarrow0}\frac{s+a}{K_cb+sa+s^2}=\frac{a}{K_cb}
+\end{equation}
+On veut que l'erreur dynamique soit inférieur a 1\% soit:
+\begin{equation*}
+    e_1<1\%\Leftrightarrow\frac{a}{K_Cb}<1\%\Leftrightarrow K_C>\frac{a}{0.01b}\Leftrightarrow K_C>1.45
+\end{equation*}
+\subsection{}
+\subsection{}
+Marge de phase initiale: 5°. Une correction d'au moins -40dB doit être appliqué, soit:
+$$
+    20\log(K_C)<-40\Leftrightarrow K_C<10^{-2}
+$$
+\subsection{}
+Afin de respecter les conditions de stabilité et de précision on doit choisir $K_C\in]1.45;3.23[$.
+\end{document}
