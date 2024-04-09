@@ -1,12 +1,10 @@
 % GEP2014L Automatique
 % Commande Servo
 
+close all;
+
 %% Analyse du modele entree-sortie du systeme
-<<<<<<< HEAD
-% Définition du système
-=======
 % Definition du systeme
->>>>>>> 4c2f300 (TP1 + début compte rendu)
 s = tf("s");
 a = 0.45;
 b = 31;
@@ -17,12 +15,8 @@ figure("Name", "Diagramme des poles");
 pzmap(Moteur);
 grid;
 
-% Réponse indicielle
-<<<<<<< HEAD
-figure("Name", "Réponse indicielle");
-=======
+% Reponse indicielle
 figure("Name", "Reponse indicielle");
->>>>>>> 4c2f300 (TP1 + début compte rendu)
 step(Moteur);
 grid;
 
@@ -38,11 +32,7 @@ grid;
 
 %% Commande proportionelle
 % Boucle ouverte
-<<<<<<< HEAD
-Kc = 1;
-=======
-Kc = 0.01;
->>>>>>> 4c2f300 (TP1 + début compte rendu)
+Kc = 0.1;
 H0 = (Kc*b)/(s*(s+a));
 
 % Lieu des poles en boucle ouverte
@@ -53,9 +43,6 @@ grid;
 % Diagramme de Bode en boucle ouverte
 figure("Name", "Diagramme de Bode en boucle ouverte");
 bode(H0);
-<<<<<<< HEAD
-grid;
-=======
 grid;
 
 % Boucle ferm�e et r�ponse indicielle
@@ -89,4 +76,3 @@ Hbf2 = H01/(1+H01);
 figure("Name", "Lieu des poles en boucle fermee");
 pzmap(Hbf2);
 grid;
->>>>>>> 4c2f300 (TP1 + début compte rendu)
