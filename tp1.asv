@@ -57,8 +57,7 @@ grid;
 Td = 2.12;
 alpha = 20;
 Tf = Td/alpha;
-Kc1 = 1;
-C1 = Kc1 * (1 + (Td*s)/(1+Tf*s));
+C1 = Kc * (1 + (Td*s)/(1+Tf*s));
 
 figure("Name", "Diagramme de Bode du correcteur");
 bode(C1);
@@ -71,7 +70,7 @@ figure("Name", "Diagramme de bode du système en boucle ouverte avec correcteur")
 bode(H01);
 grid;
 
-sisotool(Moteur, C1);
+%sisotool(Moteur, C1);
 
 Hbf2 = H01/(1+H01);
 figure("Name", "Lieu des poles en boucle fermee");
