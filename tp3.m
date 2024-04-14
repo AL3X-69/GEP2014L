@@ -20,7 +20,7 @@ H=K/((s^2)/(wn^2) + 2*z*s/wn + 1);
 figure(1);
 bode(H);
 
-% Réponse indicielle en boucle ouverte
+% RÃ©ponse indicielle en boucle ouverte
 figure(2);
 step(H);
 
@@ -30,13 +30,13 @@ Kd = 2 * (z1 - z) / (K*wn);
 Cd = Kd * s;
 H1 = feedback(H, Cd);
 
-% Réponse indicielle du système avec correcteur dérivateur
+% RÃ©ponse indicielle du systÃ¨me avec correcteur dÃ©rivateur
 figure(2);
 hold on;
 step(H1);
 grid on;
 
-% Diagramme de Bode du système avec correcteur dérivateur
+% Diagramme de Bode du systÃ¨me avec correcteur dÃ©rivateur
 figure(1);
 hold on;
 bode(H1);
@@ -59,8 +59,9 @@ hold on;
 bode(H02);
 grid;
 
-% Réponse indicielle du système avec les deux correcteurs et Kp = 84.14
+% RÃ©ponse indicielle du systÃ¨me avec les deux correcteurs et Kp = 84.14
 Hbf = feedback(H02, 1);
 figure(4);
 step(Hbf);
 grid;
+
